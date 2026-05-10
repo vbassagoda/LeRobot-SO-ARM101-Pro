@@ -41,6 +41,6 @@ lerobot-calibrate \
     --robot.id=my_awesome_follower_arm # Give the robot a unique name
 
 lerobot-calibrate \
-    --robot.type=so101_leader \
-    --robot.port=/dev/tty.usbmodem5AE70447401 \ # The port of your leader arm
-    --robot.id=my_awesome_leader_arm # Give the robot a unique name
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/tty.usbmodem5AE70447401 \
+    --teleop.id=my_awesome_leader_arm
