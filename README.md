@@ -14,22 +14,33 @@ source venv/bin/activate
 
 pip install 'lerobot[feetech]'   # (no need for pip install -e ".[feetech]")
 
-# follower arm
+## follower arm
 1. connect the power to one motor board and run
 lerobot-find-port
 2. get the last part of the e.g. "tty.usbmodem5AE60750641"
-3. connect the 12v power to the board annd connect the gripper motor
+3. connect the 12v power to the board and connect the gripper motor
 lerobot-setup-motors \
     --robot.type=so101_follower \
     --robot.port=/dev/tty.usbmodem5AE60750641  # <- paste here the port found at previous step
 4. hit enter and connect next motor, until all motors are done
 
-# leader arm:
+## leader arm:
 1. connect the power to the other motor board and run
-lerobot-find-port   # get the last part of the e.g. "tty.usbmodem5AE60750641"
+lerobot-find-port
 2. get the last part of the e.g. "tty.usbmodem5AE70447401"
-3. connect the 5v power to the board annd connect the gripper motor
+3. connect the 5v power to the board and connect the gripper motor
 lerobot-setup-motors \
     --teleop.type=so101_leader \
     --teleop.port=/dev/tty.usbmodem5AE70447401
 4. hit enter and connect next motor, until all motors are done
+
+## Calibration
+lerobot-calibrate \
+    --robot.type=so101_follower \
+    --robot.port=/dev/tty.usbmodem5AE60750641 \ # The port of your follower arm
+    --robot.id=my_awesome_follower_arm # Give the robot a unique name
+
+lerobot-calibrate \
+    --robot.type=so101_leader \
+    --robot.port=/dev/tty.usbmodem5AE70447401 \ # The port of your leader arm
+    --robot.id=my_awesome_leader_arm # Give the robot a unique name
