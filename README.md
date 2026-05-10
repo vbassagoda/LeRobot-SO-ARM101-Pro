@@ -44,3 +44,15 @@ lerobot-calibrate \
     --teleop.type=so101_leader \
     --teleop.port=/dev/tty.usbmodem5AE70447401 \
     --teleop.id=my_awesome_leader_arm
+
+    
+# Teleoperate
+
+lerobot-teleoperate \
+    --robot.type=so101_follower \
+    --robot.port=/dev/tty.usbmodem5AE60750641 \
+    --robot.id=my_awesome_follower_arm \
+    --teleop.type=so101_leader \
+    --teleop.port=/dev/tty.usbmodem5AE70447401 \
+    --teleop.id=my_awesome_leader_arm \
+    --display_data=true
